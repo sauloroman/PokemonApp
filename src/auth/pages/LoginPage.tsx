@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Bar } from "../../shared/components";
 import { useForm, type FormValidations } from "../../shared/hooks";
 
 import PokemonLettering from '../../assets/img/pokedex__title.png'
 import pokemonGifLogin from '../../assets/img/pokemonGifLogin.gif'
+import { PokemonContext } from "../../context";
 // import pokemonGifLoginDark from '../../assets/img/pokemonGifLoginDark.gif'
 
 const formData = {
   username: '',
 }
 
-const formValidations: FormValidations<formData> = {
+const formValidations: FormValidations<typeof formData> = {
   username: [ (value: string) => value.trim().length > 2, 'El nombre es necesario']
 }
 
 export const LoginPage: React.FC = () => {
 
+  const context = useContext<any>(PokemonContext)
+
   const {
-    formState,
     isFormValid,
     onInputChange,
     onResetForm,
@@ -32,7 +34,7 @@ export const LoginPage: React.FC = () => {
 
     if ( !isFormValid ) return
 
-    
+    context.loginUser( username )
     onResetForm()
   }
 
