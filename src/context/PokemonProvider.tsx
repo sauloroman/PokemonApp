@@ -17,13 +17,15 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
     openModal,
     setTypeSearch,
     setSearch,
-    setAmountPokemonsPerPage
+    setAmountPokemonsPerPage,
+    setPagination,
   } = usePokemonContext()
 
   return (
     <PokemonContext.Provider value={{
       auth: state.auth,
       ui: state.ui,
+      pagination: state.pagination,
     
       loginUser,
       logoutUser,
@@ -31,7 +33,8 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
       closeModal,
       setTypeSearch,
       setSearch,
-      setAmountPokemonsPerPage
+      setAmountPokemonsPerPage,
+      setPagination,
     }}>
       { children }
     </PokemonContext.Provider>

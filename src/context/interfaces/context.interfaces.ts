@@ -10,7 +10,13 @@ export interface UIState {
   amountPokemonsPerPage: number,
 }
 
+export interface PaginationState {
+  page: number,
+  limit: number,
+}
+
 export interface AppState {
   auth: AuthState,
   ui: UIState,
+  pagination: PaginationState,
 }
