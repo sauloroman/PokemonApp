@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { PokemonContext } from '../context'
-import type { ContextValue } from '../context/PokemonContext'
+import { type ContextState } from '../context/PokemonContext'
 
 export const PrivateRoutes: React.FC = () => {
 
-  const {  } = useContext<ContextValue>(PokemonContext)
+  const { 
+    auth: { logged }
+  } = useContext<ContextState>(PokemonContext)
   
 
-  return isAuthenticated ? 
+  return logged ? 
     <Outlet /> 
   : <Navigate to={'/login'}/>
 }

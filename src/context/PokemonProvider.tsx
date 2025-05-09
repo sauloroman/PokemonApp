@@ -8,12 +8,26 @@ interface PokemonProviderProps {
 
 export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) => {
 
-  const { auth, ui } = usePokemonContext()
+  const { 
+    state, 
+
+    closeModal, 
+    loginUser, 
+    logoutUser, 
+    openModal,
+    setTypeSearch 
+  } = usePokemonContext()
 
   return (
     <PokemonContext.Provider value={{
-      auth,
-      ui
+      auth: state.auth,
+      ui: state.ui,
+    
+      loginUser,
+      logoutUser,
+      openModal,
+      closeModal,
+      setTypeSearch
     }}>
       { children }
     </PokemonContext.Provider>

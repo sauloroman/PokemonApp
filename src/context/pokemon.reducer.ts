@@ -1,9 +1,9 @@
-import type { AppState } from './interfaces/state.interface';
 import {
   AuthActionTypes,
   UIActionTypes,
   type ActionTypes,
 } from './actions/types.action';
+import type { AppState } from './interfaces/context.interfaces';
 
 export const initialState: AppState = {
   auth: {
@@ -12,6 +12,7 @@ export const initialState: AppState = {
   },
   ui: {
     isModalOpen: false,
+    typeSearch: false
   },
 };
 
@@ -54,6 +55,14 @@ export const pokemonReducer = (
           isModalOpen: false,
         },
       };
+    case UIActionTypes.setTypeSearch:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          typeSearch: action.payload
+        }
+      }
     default: return state
   }
 };

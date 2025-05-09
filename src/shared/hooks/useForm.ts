@@ -10,7 +10,7 @@ export type FormValidations<T> = {
 
 export const useForm = <T extends Record<string, any>>( 
   initialForm: T, 
-  formValidations: FormValidations<T> 
+  formValidations: FormValidations<T> | null
 ) => {
 
   const [formState, setFormState] = useState<T>(initialForm)

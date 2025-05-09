@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   html {
     font-size: 50%;
   }
@@ -219,7 +219,6 @@
     padding: 5rem;
   }
 
-  .btn--reset,
   .btn--return {
     width: 30%;
   }
@@ -234,18 +233,11 @@
   }
 
   .choose__header img {
-    width: 25%;
-  }
-
-  .pokedex__header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    width: 6rem;
   }
 
   .pokedex__header {
     width: 100%;
-    height: 6rem;
-    flex-direction: row;
   }
 
   .pokedex__welcome {
@@ -279,7 +271,7 @@
 
   .bar--app .bar__image {
     left: 20%;
-    width: 35%;
+    width: 25%;
   }
 
   .pokemon__movements,
@@ -325,4 +317,4 @@
   .form .btn {
     flex: 1;
   }
-}
+} */

@@ -9,10 +9,8 @@ const init = () => {
 
   return {
     ...initialState,
-    auth: {
-      logged: !!userPokedex,
-      user: userPokedex,
-    }
+    logged: !!userPokedex,
+    user: userPokedex,
   }
 }
 
@@ -56,19 +54,22 @@ export const usePokemonContext = () => {
     dispatch( actionCloseModal )
   }
 
-  return {
-    auth: {
-      ...state.auth,
-
-      loginUser,
-      logoutUser,
-    },
-    ui: {
-      ...state.ui,
-
-      openModal,
-      closeModal,
+  const setTypeSearch = ( status: boolean ) => {
+    const actionSetTypeSearch = {
+      type: UIActionTypes.setTypeSearch,
+      payload: status,
     }
+    dispatch( actionSetTypeSearch )
+  }
+
+  return {
+    state,
+    
+    loginUser,
+    logoutUser,
+    openModal,
+    closeModal,
+    setTypeSearch
   }
 
 } 

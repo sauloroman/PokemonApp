@@ -8,9 +8,13 @@
 }
 
 .login__image {
-  display: block;
-  margin: 17rem auto 5rem;
-  width: 90%;
+  margin: 10rem 0 5rem;
+  width: 40rem;
+}
+
+.login__top {
+  display: flex;
+  justify-content: center;
 }
 
 .login__text {
@@ -19,6 +23,7 @@
 }
 
 .login__title {
+  font-size: 2.4rem;
   margin-bottom: 2rem;
   color: var(--color-red-2);
 }
@@ -28,29 +33,23 @@
 }
 
 .login__form {
-  width: 30rem;
+  width: 40rem;
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
 }
 
-.login__gif-1,
+.login__gif-1, 
 .login__gif-2 {
-  width: 95%;
-  justify-content: flex-end;
-} 
-
-.login__gif-1 {
+  margin-top: -15rem;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
-.login__gif-1 img {
-  width: 60%;
-}
-
+.login__gif-1 img,
 .login__gif-2 img {
-  width: 50%;
+  width: 30rem;
 }
 
 .login__button button {
@@ -62,37 +61,44 @@
 /* ##################### */
 
 .choose__header {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  background-color: var(--color-theme-light);
-  width: 90%;
-  padding: 1rem;
-  margin: 5rem 0 8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
 }
 
 .choose__header img {
-  width: 30%;
+  width: 3.2rem;
 }
 
 .pokedex__header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 8rem;
+  padding: 3rem 0;
+}
+
+.pokedex__header-first {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .pokedex__welcome {
   text-align: center;
   color: var(--color-red-3);
   font-weight: 700;
+  font-size: 1.4rem;
   line-height: 1.7;
-  margin-bottom: 3rem;
 }
 
 .pokedex__welcome span {
   color: var(--color-font-2);
+}
+
+.pokemon-name__form,
+.pokemon-name__type {
+  margin: 2rem 0;
+  width: 50rem;
 }
 
 /* ##################### */
@@ -461,7 +467,6 @@
   align-items: center;   
   position: relative;
   font-weight: 600;
-  height: 100%;
 }
 
 .choose__search {
@@ -470,7 +475,6 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  height: 100%;
 }
 
 .choose__imgBox p,
@@ -479,7 +483,8 @@
   background-color: var(--color-font-2);
   color: #fff;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 100px;
 }
 
 .rotate {

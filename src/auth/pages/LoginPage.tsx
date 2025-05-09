@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Bar } from "../../shared/components";
-import { useForm, type FormValidations } from "../../shared/hooks";
+import { useForm, useNavPage, type FormValidations } from "../../shared/hooks";
 
 import PokemonLettering from '../../assets/img/pokedex__title.png'
 import pokemonGifLogin from '../../assets/img/pokemonGifLogin.gif'
 import { PokemonContext } from "../../context";
+import { type ContextState } from "../../context/PokemonContext";
 // import pokemonGifLoginDark from '../../assets/img/pokemonGifLoginDark.gif'
 
 const formData = {
@@ -17,7 +18,7 @@ const formValidations: FormValidations<typeof formData> = {
 
 export const LoginPage: React.FC = () => {
 
-  const context = useContext<any>(PokemonContext)
+  const { loginUser } = useContext<ContextState>(PokemonContext)
 
   const {
     isFormValid,
@@ -27,6 +28,7 @@ export const LoginPage: React.FC = () => {
     usernameValid
   } = useForm( formData, formValidations )
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const { onNavigatePage } = useNavPage()
 
   const onSetUserName = ( e: React.FormEvent ) => {
     e.preventDefault()
@@ -34,17 +36,21 @@ export const LoginPage: React.FC = () => {
 
     if ( !isFormValid ) return
 
-    context.loginUser( username )
+    loginUser( username )
+    onNavigatePage('/')
     onResetForm()
   }
 
   return (
     <div className="login">
-      <img
-        className="login__image animate__animated animate__fadeInDown"
-        src={PokemonLettering}
-        alt="Pokemon lettering"
-      />
+
+      <div className="login__top">
+        <img
+          className="login__image animate__animated animate__fadeInDown"
+          src={PokemonLettering}
+          alt="Pokemon lettering"
+        />
+      </div>
 
       <div className="login__text">
         <h1 className="login__title animate__animated animate__fadeInLeft">

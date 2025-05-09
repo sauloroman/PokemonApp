@@ -78,7 +78,7 @@ h3 {
 }
 
 .container {
-  margin: 5rem auto;
+  margin: 0 auto;
   width: 120rem;
   max-width: 95%;
 }
@@ -227,11 +227,16 @@ h3 {
   border: none;
   border-radius: 5px;
   height: 100%;
-  padding: 1rem 2rem;
+  padding: .8rem 2rem;
   background-color: var(--color-red-2);
   color: var(--color-white);
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btn:hover {
@@ -240,20 +245,21 @@ h3 {
 
 .btn-switch {
   position: relative;
-  width: 8rem;
-  height: 3rem;
+  width: 6rem;
+  height: 2.5rem;
   border-radius: 100px;
   border: none;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
 }
 
 .btn-switch::after {
   position: absolute;
   content: "";
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   background-color: var(--color-alert-1);
   top: 50%;
@@ -270,11 +276,8 @@ h3 {
   background-color: var(--color-white);
 }
 
-.btnBox {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5rem;
+.btn--box {
+  width: 10rem;
 }
 
 .btn--return {
@@ -298,7 +301,7 @@ h3 {
 
 .bar {
   position: relative;
-  height: 15rem;
+  height: 11.5rem;
   background-color: var(--color-red-1);
 }
 
@@ -342,9 +345,9 @@ h3 {
 .bar--app .bar__image {
   display: block;
   position: absolute;
-  width: 85%;
+  width: 40rem;
   top: 50%;
-  left: 50%;
+  left: 20%;
   transform: translate(-50%, -50%);
   z-index: 4;
 }
@@ -366,7 +369,7 @@ h3 {
   border-radius: 5px;
   padding: 1rem;
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   width: 100%;
   border: 1px solid #999;
   margin-bottom: 1rem;
@@ -378,7 +381,7 @@ h3 {
 
 .form__span {
   text-align: right;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .form__field {
@@ -858,8 +861,16 @@ border-radius: 100%;
 /* HELPERS */
 /* ################################## */
 
+.flex {
+  display: flex;
+}
+
 .flex-start {
   justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }
 
 .animation {
@@ -881,4 +892,8 @@ border-radius: 100%;
 .text-wrong {
   color: var(--color-red-1);
   font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
 }

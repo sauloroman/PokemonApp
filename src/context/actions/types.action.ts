@@ -7,7 +7,8 @@ type AuthActionTypes = typeof AuthActionTypes[keyof typeof AuthActionTypes];
 
 export const UIActionTypes = {
   openModal: '[UI] - Open Modal',
-  closeModal: '[UI] - Close Modal'
+  closeModal: '[UI] - Close Modal',
+  setTypeSearch: '[UI] - Set Type Search',
 } as const
 
 type UIActionTypes = typeof UIActionTypes[keyof typeof UIActionTypes]
