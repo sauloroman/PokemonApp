@@ -3,7 +3,7 @@ import { Bar, Modal } from "../../shared/components";
 import { PokemonContext } from "../../context";
 import { type ContextState } from "../../context/PokemonContext";
 import { ChooseForm } from "./ChooseForm";
-import { PokemonFormName, PokemonFormTypes } from "../components";
+import { PokemonFormName, PokemonFormTypes, PokemonList } from "../components";
 
 export const PokedexPage: React.FC = () => {
   
@@ -44,7 +44,7 @@ export const PokedexPage: React.FC = () => {
           : <PokemonFormName />
         }
 
-        {/* <PokemonList /> */}
+        <PokemonList />
       </div>
     </div>
   );

@@ -6,6 +6,8 @@ export interface AuthState {
 export interface UIState {
   isModalOpen: boolean,
   typeSearch: boolean,
+  search: string,
+  amountPokemonsPerPage: number,
 }
 
 export interface AppState {

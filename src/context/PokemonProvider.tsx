@@ -1,6 +1,6 @@
 import React from 'react'
 import { PokemonContext } from './PokemonContext'
-import { usePokemonContext } from '../auth/hooks/usePokemonContext'
+import { usePokemonContext } from './hooks/usePokemonContext'
 
 interface PokemonProviderProps {
   children: React.ReactNode
@@ -15,7 +15,9 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
     loginUser, 
     logoutUser, 
     openModal,
-    setTypeSearch 
+    setTypeSearch,
+    setSearch,
+    setAmountPokemonsPerPage
   } = usePokemonContext()
 
   return (
@@ -27,7 +29,9 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
       logoutUser,
       openModal,
       closeModal,
-      setTypeSearch
+      setTypeSearch,
+      setSearch,
+      setAmountPokemonsPerPage
     }}>
       { children }
     </PokemonContext.Provider>

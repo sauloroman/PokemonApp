@@ -79,7 +79,6 @@ h3 {
 
 .container {
   margin: 0 auto;
-  width: 120rem;
   max-width: 95%;
 }
 
@@ -288,6 +287,17 @@ h3 {
   width: 95%;
 }
 
+.btn--black {
+  transition: background .4s ease;
+  background-color: var(--color-black-2);
+  border: 2px solid transparent;
+  font-weight: bold;
+}
+
+.btn--black:hover {
+  background-color: var(--color-black-1);
+}
+
 .btn--white {
   background-color: var(--color-white);
   color: var(--color-font-3);
@@ -347,7 +357,7 @@ h3 {
   position: absolute;
   width: 40rem;
   top: 50%;
-  left: 20%;
+  left: 15%;
   transform: translate(-50%, -50%);
   z-index: 4;
 }
@@ -371,7 +381,7 @@ h3 {
   font-family: inherit;
   font-size: 1.4rem;
   width: 100%;
-  border: 1px solid #999;
+  border: 1px solid #ddd;
   margin-bottom: 1rem;
 }
 
@@ -442,14 +452,14 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"]:checked + label:after {
-content: "";
-width: 0;
-height: 0;
-border: 1rem solid var(--color-red-2);
-float: left;
-margin-left: -3.3rem;
-margin-top: .2em;
-border-radius: 100%;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 1rem solid var(--color-red-2);
+  float: left;
+  margin-left: -3.3rem;
+  margin-top: .2em;
+  border-radius: 100%;
 }
 
 /* ################################## */
@@ -896,4 +906,12 @@ border-radius: 100%;
 
 .text-right {
   text-align: right;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mt-2 {
+  margin-top: 2rem;
 }

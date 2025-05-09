@@ -37,7 +37,6 @@ export const PokemonFormName: React.FC = () => {
         { nameSearchedValid }
         </span>
       }
-      <button className="btn">Buscar</button>
     </form>
   );
 };

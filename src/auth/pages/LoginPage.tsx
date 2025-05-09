@@ -43,51 +43,52 @@ export const LoginPage: React.FC = () => {
 
   return (
     <div className="login">
-
-      <div className="login__top">
-        <img
-          className="login__image animate__animated animate__fadeInDown"
-          src={PokemonLettering}
-          alt="Pokemon lettering"
-        />
-      </div>
-
-      <div className="login__text">
-        <h1 className="login__title animate__animated animate__fadeInLeft">
-          ¡Hola entrenador!
-        </h1>
-        <p className="animate__animated animate__fadeInRight">
-          Para poder comenzar, dame tu nombre
-        </p>
-      </div>
-
-      <form
-        onSubmit={onSetUserName}
-        className="form login__form animate__animated animate__fadeInUp"
-      >
-        <div className="form__field">
-          <input
-            className="form__input"
-            name="username"
-            value={username}
-            onChange={onInputChange}
-            autoComplete="off"
-            placeholder="Tu nombre"
-            type="text"
+      <div className="login__container">
+        <div className="login__top">
+          <img
+            className="login__image animate__animated animate__fadeInDown"
+            src={PokemonLettering}
+            alt="Pokemon lettering"
           />
-          <span className={`form__span ${!isFormValid && formSubmitted ? 'text-wrong' : null}`}>{usernameValid}</span>
         </div>
-        <div className="login__button">
-          <button className="btn animation">Comenzar</button>
-        </div>
-      </form>
 
-      <div className="login__gif-1">
-        <img src={pokemonGifLogin} alt="Pokemon peleando" />
+        <div className="login__text">
+          <h1 className="login__title animate__animated animate__fadeInLeft">
+            ¡Hola entrenador!
+          </h1>
+          <p className="animate__animated animate__fadeInRight">
+            Para poder comenzar, dame tu nombre
+          </p>
+        </div>
+
+        <form
+          onSubmit={onSetUserName}
+          className="form login__form animate__animated animate__fadeInUp"
+        >
+          <div className="form__field">
+            <input
+              className="form__input"
+              name="username"
+              value={username}
+              onChange={onInputChange}
+              autoComplete="off"
+              placeholder="Tu nombre"
+              type="text"
+            />
+            <span className={`form__span ${!isFormValid && formSubmitted ? 'text-wrong' : null}`}>{usernameValid}</span>
+          </div>
+          <div className="login__button">
+            <button className="btn animation">Comenzar</button>
+          </div>
+        </form>
+
+        <div className="login__gif-1">
+          <img src={pokemonGifLogin} alt="Pokemon peleando" />
+        </div>
+        {/* <div className="login__gif-2">
+          <img src={pokemonGifLoginDark} alt="Pokemon peleando" />
+        </div> */}
       </div>
-      {/* <div className="login__gif-2">
-        <img src={pokemonGifLoginDark} alt="Pokemon peleando" />
-      </div> */}
 
       <div className="bar--login">
         <Bar />

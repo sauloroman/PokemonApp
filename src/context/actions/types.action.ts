@@ -9,6 +9,8 @@ export const UIActionTypes = {
   openModal: '[UI] - Open Modal',
   closeModal: '[UI] - Close Modal',
   setTypeSearch: '[UI] - Set Type Search',
+  setSearch: '[UI] - Set Search',
+  setAmountPokemonPerPage: '[UI] - Set Amount Pokemons Per Page'
 } as const
 
 type UIActionTypes = typeof UIActionTypes[keyof typeof UIActionTypes]

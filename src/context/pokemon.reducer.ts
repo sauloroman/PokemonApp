@@ -12,7 +12,9 @@ export const initialState: AppState = {
   },
   ui: {
     isModalOpen: false,
-    typeSearch: false
+    typeSearch: false,
+    search: '',
+    amountPokemonsPerPage: 20,
   },
 };
 
@@ -61,6 +63,14 @@ export const pokemonReducer = (
         ui: {
           ...state.ui,
           typeSearch: action.payload
+        }
+      }
+    case UIActionTypes.setSearch:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          search: action.payload
         }
       }
     default: return state

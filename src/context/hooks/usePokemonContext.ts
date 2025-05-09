@@ -1,6 +1,6 @@
 import { useReducer } from "react"
-import { initialState, pokemonReducer } from "../../context"
-import { AuthActionTypes, UIActionTypes } from "../../context/actions/types.action"
+import { initialState, pokemonReducer } from ".."
+import { AuthActionTypes, UIActionTypes } from "../actions/types.action"
 
 const userLocalStorage = 'user-pokedex'
 
@@ -62,6 +62,22 @@ export const usePokemonContext = () => {
     dispatch( actionSetTypeSearch )
   }
 
+  const setSearch = ( search: string ) => {
+    const actionSetSearch = {
+      type: UIActionTypes.setSearch,
+      payload: search
+    }
+    dispatch( actionSetSearch )
+  }
+
+  const setAmountPokemonsPerPage = ( amount: number ) => {
+    const actionSetAmountPokemonsPerPage = {
+      type: UIActionTypes.setAmountPokemonPerPage,
+      payload: amount
+    }
+    dispatch( actionSetAmountPokemonsPerPage )
+  }
+
   return {
     state,
     
@@ -69,7 +85,9 @@ export const usePokemonContext = () => {
     logoutUser,
     openModal,
     closeModal,
-    setTypeSearch
+    setTypeSearch,
+    setSearch,
+    setAmountPokemonsPerPage,
   }
 
 } 

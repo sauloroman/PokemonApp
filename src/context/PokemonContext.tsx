@@ -8,7 +8,9 @@ export interface ContextState {
   logoutUser: () => void,
   openModal: () => void,
   closeModal: () => void,
-  setTypeSearch: ( status: boolean ) => void
+  setTypeSearch: ( status: boolean ) => void,
+  setSearch: ( search: string ) => void,
+  setAmountPokemonsPerPage: ( amount: number ) => void,
 }
 
 export const PokemonContext = createContext<ContextState | any>(null)
