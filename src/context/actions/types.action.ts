@@ -13,18 +13,14 @@ export const UIActionTypes = {
   setAmountPokemonPerPage: '[UI] - Set Amount Pokemons Per Page',
 } as const
 
-export const PaginationActionTypes = {
-  setPagination: '[UI] - Set Amount Pokemons Per Page',
-}
-
 type UIActionTypes = typeof UIActionTypes[keyof typeof UIActionTypes]
 
-export const PokemonActionTypes = {
+export const PokemonsActionTypes = {
   setPokemons: '[Pokemons] - Set Pokemons',
   setPokemonPage: '[Pokemons] - Set Pokemon Page'
 }
 
-type PokemonActionTypes = typeof PokemonActionTypes[keyof typeof PokemonActionTypes]
+type PokemonActionTypes = typeof PokemonsActionTypes[keyof typeof PokemonsActionTypes]
 
 export interface ActionTypes {
   type: AuthActionTypes | UIActionTypes | PokemonActionTypes,

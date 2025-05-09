@@ -7,15 +7,10 @@ import { PokemonCard } from './PokemonCard';
 export const PokemonList: React.FC = () => {
 
   const { 
-    ui: { search, amountPokemonsPerPage },
-    pagination: { page, limit }
+    ui: { search, amountPokemonsPerPage }
   } = useContext<ContextState>( PokemonContext )
   
-  const { isFetching, pokemons } = usePokemons({
-    search,
-    limit,
-    page
-  });
+  const { isFetching, pokemons } = usePokemons({ search });
 
   return (
     <>

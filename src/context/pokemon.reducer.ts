@@ -1,6 +1,6 @@
 import {
   AuthActionTypes,
-  PaginationActionTypes,
+  PokemonsActionTypes,
   UIActionTypes,
   type ActionTypes,
 } from './actions/types.action';
@@ -17,9 +17,9 @@ export const initialState: AppState = {
     search: '',
     amountPokemonsPerPage: 20,
   },
-  pagination: {
+  pokemons: {
+    items: [],
     page: 1,
-    limit: 20,
   }
 };
 
@@ -78,13 +78,12 @@ export const pokemonReducer = (
           search: action.payload
         }
       }
-    case PaginationActionTypes.setPagination:
+    case PokemonsActionTypes.setPokemonPage:
       return {
         ...state,
-        pagination: {
-          ...state.pagination,
-          page: action.payload.page,
-          limit: action.payload.limit,
+        pokemons: {
+          ...state.pokemons,
+          page: action.payload,
         }
       }
     default: return state

@@ -1,6 +1,6 @@
 import { act, useReducer } from "react"
 import { initialState, pokemonReducer } from ".."
-import { AuthActionTypes, PaginationActionTypes, UIActionTypes } from "../actions/types.action"
+import { AuthActionTypes, PokemonsActionTypes, UIActionTypes } from "../actions/types.action"
 
 const userLocalStorage = 'user-pokedex'
 
@@ -78,10 +78,10 @@ export const usePokemonContext = () => {
     dispatch( actionSetAmountPokemonsPerPage )
   }
 
-  const setPagination = ( page: number, limit: number ) => {
+  const setPokemonPage = ( page: number | string ) => {
     const action = {
-      type: PaginationActionTypes.setPagination,
-      payload: { page, limit }
+      type: PokemonsActionTypes.setPokemonPage,
+      payload: page,
     }
     dispatch( action )
   }
@@ -96,7 +96,7 @@ export const usePokemonContext = () => {
     setTypeSearch,
     setSearch,
     setAmountPokemonsPerPage,
-    setPagination,
+    setPokemonPage,
   }
 
 } 

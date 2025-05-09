@@ -1,3 +1,5 @@
+import type { Pokemon } from "../../pokemons/interfaces/pokemon.interface";
+
 export interface AuthState {
   logged: boolean,
   user: string | null
@@ -10,13 +12,13 @@ export interface UIState {
   amountPokemonsPerPage: number,
 }
 
-export interface PaginationState {
+export interface PokemonsState {
   page: number,
-  limit: number,
+  items: Pokemon[] | [],
 }
 
 export interface AppState {
   auth: AuthState,
   ui: UIState,
-  pagination: PaginationState,
+  pokemons: PokemonsState,
 }

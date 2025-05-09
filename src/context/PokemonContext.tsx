@@ -1,10 +1,10 @@
 import { createContext } from 'react'
-import type { AuthState, PaginationState, UIState } from './interfaces/context.interfaces'
+import type { AuthState, PokemonsState, UIState } from './interfaces/context.interfaces'
 
 export interface ContextState {
   auth: AuthState,
   ui: UIState,
-  pagination: PaginationState,
+  pokemons: PokemonsState,
   loginUser: ( username: string ) => void,
   logoutUser: () => void,
   openModal: () => void,
@@ -12,7 +12,7 @@ export interface ContextState {
   setTypeSearch: ( status: boolean ) => void,
   setSearch: ( search: string ) => void,
   setAmountPokemonsPerPage: ( amount: number ) => void,
-  setPagination: ( page: number, limit: number ) => void,
+  setPokemonPage: ( page: number ) => void,
 }
 
 export const PokemonContext = createContext<ContextState | any>(null)
