@@ -810,8 +810,10 @@ input[type="radio"]:checked + label:after {
 /* ################################## */
 
 .error__page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 10rem;
   padding: 2rem;

@@ -19,6 +19,7 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
     setSearch,
     setAmountPokemonsPerPage,
     setPokemonPage,
+    setPokemons
   } = usePokemonContext()
 
   return (
@@ -35,6 +36,7 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
       setSearch,
       setAmountPokemonsPerPage,
       setPokemonPage,
+      setPokemons,
     }}>
       { children }
     </PokemonContext.Provider>

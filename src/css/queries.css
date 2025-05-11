@@ -324,7 +324,7 @@
     left: 20%;
   }
 
-  .pokemon__card {
+  .pokemon-grid { 
     width: 90%;
   }
 }

@@ -45,6 +45,10 @@ export const PokedexPage: React.FC = () => {
         }
 
         <PokemonList />
+
+        <div className="bar--app">
+          <Bar />
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export const initialState: AppState = {
     isModalOpen: false,
     typeSearch: false,
     search: '',
-    amountPokemonsPerPage: 20,
+    amountPokemonsPerPage: 16,
   },
   pokemons: {
     items: [],
@@ -84,6 +84,14 @@ export const pokemonReducer = (
         pokemons: {
           ...state.pokemons,
           page: action.payload,
+        }
+      }
+    case PokemonsActionTypes.setPokemons:
+      return {
+        ...state,
+        pokemons: {
+          ...state.pokemons,
+          items: action.payload,
         }
       }
     default: return state

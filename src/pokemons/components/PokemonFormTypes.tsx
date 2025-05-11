@@ -7,7 +7,7 @@ import type { ContextState } from "../../context/PokemonContext";
 
 export const PokemonFormTypes: React.FC = () => {
 
-  const { setSearch } = useContext<ContextState>( PokemonContext )
+  const { setSearch, setPokemonPage } = useContext<ContextState>( PokemonContext )
   const { data: pokemonTypes } = usePokemonsTypes()
 
   const { selectedType, onInputChange } = useForm({
@@ -17,6 +17,7 @@ export const PokemonFormTypes: React.FC = () => {
   useEffect( () => {
     localStorage.setItem('searchType', selectedType )
     setSearch( selectedType.toLowerCase() )
+    setPokemonPage( 1 )
   }, [ selectedType ] )
 
   return (

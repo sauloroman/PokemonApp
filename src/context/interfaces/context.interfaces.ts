@@ -1,4 +1,4 @@
-import type { Pokemon } from "../../pokemons/interfaces/pokemon.interface";
+import type { Generation } from "../../pokemons/interfaces/pokemon-per-type.interface";
 
 export interface AuthState {
   logged: boolean,
@@ -14,7 +14,7 @@ export interface UIState {
 
 export interface PokemonsState {
   page: number,
-  items: Pokemon[] | [],
+  items: Generation[] | [],
 }
 
 export interface AppState {

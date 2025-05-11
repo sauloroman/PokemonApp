@@ -1,23 +1,27 @@
 import React from 'react';
 import { usePokemon } from '../hooks/usePokemon';
 import { useNavPage } from '../../shared/hooks';
-import { getPokemonInfo } from '../../shared/helpers';
+import { capitalizeString, getPokemonInfo } from '../../shared/helpers';
 import { PokemonTypesCard } from './PokemonTypesCard';
 
 interface PokemonCardProps {
   id: string,
-  pokemonName: string,
 }
 
-export const PokemonCard: React.FC<PokemonCardProps> = ({ id, pokemonName }) => {
+export const PokemonCard: React.FC<PokemonCardProps> = ({ id }) => {
 
   const { onNavigatePage } = useNavPage()
   const { data } = usePokemon( id )
   const pokemon = getPokemonInfo( data )
 
+  const onNavigatePokemonPage = () => {
+    onNavigatePage(`/pokemon/${id}`)
+    window.scroll({ top: 0 })
+  }
+  
   return (
     <div
-      onClick={() => onNavigatePage(`/pokemon/${id}`)}
+      onClick={ onNavigatePokemonPage }
       className={`pokemon__card background-${pokemon.type?.[0]} animation`}
     >
       <div className={`${pokemon.type?.[0]} pokemon__card-imageBox`}>

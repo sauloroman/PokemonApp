@@ -1,6 +1,7 @@
-import { act, useReducer } from "react"
+import { useReducer } from "react"
 import { initialState, pokemonReducer } from ".."
 import { AuthActionTypes, PokemonsActionTypes, UIActionTypes } from "../actions/types.action"
+import type { Generation } from "../../pokemons/interfaces/pokemon-per-type.interface"
 
 const userLocalStorage = 'user-pokedex'
 
@@ -86,6 +87,14 @@ export const usePokemonContext = () => {
     dispatch( action )
   }
 
+  const setPokemons = ( pokemons: Generation[] | undefined ) => {
+    const action = {
+      type: PokemonsActionTypes.setPokemons,
+      payload: pokemons
+    }
+    dispatch( action )
+  }
+
   return {
     state,
     
@@ -97,6 +106,7 @@ export const usePokemonContext = () => {
     setSearch,
     setAmountPokemonsPerPage,
     setPokemonPage,
+    setPokemons,
   }
 
 } 

@@ -8,6 +8,13 @@ export const getPokemonInfo = ( data: Pokemon ) => {
         image3: data?.sprites.back_default,
         image4: data?.sprites.other?.dream_world.front_default,
         image5: data?.sprites.other?.home.front_default,
+        images: [
+          data?.sprites.other?.['official-artwork'].front_default,
+          data?.sprites.back_default,
+          data?.sprites.front_default,
+          data?.sprites.other?.dream_world.front_default,
+          data?.sprites.other?.home.front_default,
+        ],
         name: data?.name[0].toUpperCase() + data?.name.slice(1, data?.name.length).toLowerCase(),
         type: data?.types.map( type => type.type.name ),
         hp: data?.stats[0].base_stat,

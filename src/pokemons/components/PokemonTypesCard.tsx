@@ -6,15 +6,15 @@ interface PokemonTypesCardProps {
 }
 
 export const PokemonTypesCard: React.FC<PokemonTypesCardProps> = ({
-  types,
+  types = [],
 }) => {
   return (
     <>
-      {types?.map((type) => {
+      {types.map((type) => (
         <p className={`${type} type-pokemon`} key={type}>
           { capitalizeString(type) }
         </p>
-      })}
+      ))}
     </>
   );
 };
