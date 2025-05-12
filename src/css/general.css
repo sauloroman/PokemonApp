@@ -815,7 +815,6 @@ input[type="radio"]:checked + label:after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
   padding: 2rem;
 }
 
