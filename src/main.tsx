@@ -24,9 +24,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={ queryClient }>
       <PokemonProvider>
-        <main className='light-theme'>
           <RouterProvider router={ Router } />
-        </main>
       </PokemonProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>

@@ -11,8 +11,10 @@ export const PokemonPage: React.FC = () => {
   const { getPokemonIdFromParams } = useNavPage()
   const pokemondId = getPokemonIdFromParams()
 
+  console.log(pokemondId)
+
   const queryClient = useQueryClient()
-  const pokemon = queryClient.getQueryData<PokemonType>(['pokemon', { id: pokemondId }])
+  const pokemon = queryClient.getQueryData<PokemonType>(['pokemon', pokemondId ])
 
   if ( !pokemon ) {
     return (<Navigate to={'404'} />)

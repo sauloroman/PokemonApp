@@ -37,6 +37,7 @@ export const LoginPage: React.FC = () => {
     if ( !isFormValid ) return
 
     loginUser( username )
+    localStorage.setItem( 'user-pokedex', JSON.stringify( username ) )
     onNavigatePage('/')
     onResetForm()
   }

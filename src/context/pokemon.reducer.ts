@@ -16,6 +16,7 @@ export const initialState: AppState = {
     typeSearch: false,
     search: '',
     amountPokemonsPerPage: 16,
+    theme: 'light'
   },
   pokemons: {
     items: [],
@@ -78,6 +79,14 @@ export const pokemonReducer = (
           search: action.payload
         }
       }
+    case UIActionTypes.setAmountPokemonPerPage:
+        return {
+          ...state,
+          ui: {
+            ...state.ui,
+            amountPokemonsPerPage: action.payload
+          }
+        }
     case PokemonsActionTypes.setPokemonPage:
       return {
         ...state,
@@ -92,6 +101,14 @@ export const pokemonReducer = (
         pokemons: {
           ...state.pokemons,
           items: action.payload,
+        }
+      }
+    case UIActionTypes.setTheme:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          theme: action.payload
         }
       }
     default: return state

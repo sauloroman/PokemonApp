@@ -11,11 +11,10 @@ export const PokemonFormTypes: React.FC = () => {
   const { data: pokemonTypes } = usePokemonsTypes()
 
   const { selectedType, onInputChange } = useForm({
-    selectedType: localStorage.getItem('searchType') || ''
+    selectedType: localStorage.getItem('search-type-pokedex') || ''
   }, null )
 
   useEffect( () => {
-    localStorage.setItem('searchType', selectedType )
     setSearch( selectedType.toLowerCase() )
     setPokemonPage( 1 )
   }, [ selectedType ] )

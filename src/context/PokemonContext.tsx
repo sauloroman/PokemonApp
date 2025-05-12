@@ -12,9 +12,10 @@ export interface ContextState {
   closeModal: () => void,
   setTypeSearch: ( status: boolean ) => void,
   setSearch: ( search: string ) => void,
-  setAmountPokemonsPerPage: ( amount: number ) => void,
+  setAmountPokemonsPerPage: ( amount: number | string ) => void,
   setPokemonPage: ( page: number ) => void,
-  setPokemons: ( pokemons: Generation[] | undefined ) => void
+  setPokemons: ( pokemons: Generation[] | undefined ) => void,
+  setTheme: ( theme: string ) => void,
 }
 
 export const PokemonContext = createContext<ContextState | any>(null)

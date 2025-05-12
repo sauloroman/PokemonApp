@@ -21,6 +21,7 @@ export const PokemonList: React.FC = () => {
     setPokemons( pokemons )
   }, [pokemons])
 
+
   return (
     <>
     {

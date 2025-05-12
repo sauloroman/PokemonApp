@@ -10,6 +10,7 @@ export interface UIState {
   typeSearch: boolean,
   search: string,
   amountPokemonsPerPage: number,
+  theme: string,
 }
 
 export interface PokemonsState {

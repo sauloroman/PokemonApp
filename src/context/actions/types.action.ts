@@ -11,6 +11,7 @@ export const UIActionTypes = {
   setTypeSearch: '[UI] - Set Type Search',
   setSearch: '[UI] - Set Search',
   setAmountPokemonPerPage: '[UI] - Set Amount Pokemons Per Page',
+  setTheme: '[UI] - Set Theme',
 } as const
 
 type UIActionTypes = typeof UIActionTypes[keyof typeof UIActionTypes]

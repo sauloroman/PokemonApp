@@ -5,37 +5,30 @@ import type { Generation } from "../../pokemons/interfaces/pokemon-per-type.inte
 
 const userLocalStorage = 'user-pokedex'
 
-const init = () => {
-  const userPokedex = JSON.parse( localStorage.getItem(userLocalStorage)! ) || null
-
-  return {
-    ...initialState,
-    logged: !!userPokedex,
-    user: userPokedex,
-  }
-}
-
 export const usePokemonContext = () => {
 
-  const [ state, dispatch ] = useReducer( pokemonReducer, initialState, init )
+  const [ state, dispatch ] = useReducer( pokemonReducer, initialState )
 
   const loginUser = ( username: string ) => {
     const actionLogin = {
       type: AuthActionTypes.login,
       payload: username
     }
-
-    localStorage.setItem( userLocalStorage, JSON.stringify( username ) )
     dispatch( actionLogin )
   }
 
   const logoutUser = () => {
+    
     const actionLogout = {
       type: AuthActionTypes.logout,
       payload: null
     }
 
     localStorage.removeItem( userLocalStorage )
+    localStorage.removeItem('page-pokedex')
+    localStorage.removeItem('search-type-pokedex')
+    localStorage.removeItem('amountPokemonsPerPage-pokedex')
+    
     dispatch(actionLogout)
   }
 
@@ -49,7 +42,7 @@ export const usePokemonContext = () => {
 
   const closeModal = () => {
     const actionCloseModal = {
-      type: UIActionTypes.openModal,
+      type: UIActionTypes.closeModal,
       payload: false,
     }
     dispatch( actionCloseModal )
@@ -95,6 +88,14 @@ export const usePokemonContext = () => {
     dispatch( action )
   }
 
+  const setTheme = ( theme: string ) => {
+    const action = {
+      type: UIActionTypes.setTheme,
+      payload: theme
+    }
+    dispatch( action )
+  }
+
   return {
     state,
     
@@ -107,6 +108,7 @@ export const usePokemonContext = () => {
     setAmountPokemonsPerPage,
     setPokemonPage,
     setPokemons,
+    setTheme,
   }
 
 } 

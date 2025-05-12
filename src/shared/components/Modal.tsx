@@ -5,10 +5,17 @@ import pokemonEnd2 from '../../assets/img/pokemonEnd2.gif'
 export const Modal: React.FC = () => {
 
   const {
-    openModal,
+    closeModal,
     logoutUser,
-    auth: { user }
+    auth: { user },
+    setSearch
   } = useContext<ContextState>( PokemonContext )
+
+  const onLogout = () => {
+    logoutUser()
+    closeModal()
+    setSearch("")
+  }
 
   return (
     <div className="modal animate__animated animate__fadeIn">
@@ -17,14 +24,14 @@ export const Modal: React.FC = () => {
           <h2 className="modal__title">
             ¿Desea reiniciar la aplicación, {user}?
           </h2>
-          <i onClick={openModal} className="bx bx-x modal__icon"></i>
+          <i onClick={closeModal} className="bx bx-x modal__icon"></i>
         </header>
 
         <div className="modal__buttons">
-          <button onClick={logoutUser} className="btn animation">
+          <button onClick={onLogout} className="btn animation">
             Sí
           </button>
-          <button onClick={openModal} className="btn btn--white animation">
+          <button onClick={closeModal} className="btn btn--white animation">
             No
           </button>
         </div>

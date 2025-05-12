@@ -7,11 +7,11 @@ interface ReturnButton {
 
 export const ReturnButton: React.FC<ReturnButton> = ({children}) => {
 
-  const { returnPage } = useNavPage()
+  const { onNavigatePage } = useNavPage()
 
   return (
     <div className="btnBox">
-      <button onClick={returnPage} className="btn animation btn--return">
+      <button onClick={() => onNavigatePage('/')} className="btn animation btn--return">
         {children}
       </button>
     </div>

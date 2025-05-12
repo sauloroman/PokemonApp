@@ -116,7 +116,7 @@ h3 {
 
 .modal__pop {
   background-color: var(--color-white);
-  width: 90%;
+  width: 60rem;
   margin: 0 auto;
   padding: 2rem;
 }

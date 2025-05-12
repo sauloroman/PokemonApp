@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PokemonContext } from './PokemonContext'
 import { usePokemonContext } from './hooks/usePokemonContext'
 
@@ -19,8 +19,20 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
     setSearch,
     setAmountPokemonsPerPage,
     setPokemonPage,
-    setPokemons
+    setPokemons,
+    setTheme
   } = usePokemonContext()
+
+  useEffect(() => {
+    const user = JSON.parse( localStorage.getItem('user-pokedex')! )
+    if ( user ) loginUser( user )
+
+    const theme = JSON.parse( localStorage.getItem('theme-pokedex')! ) || 'light'
+    setTheme( theme )
+
+    const pokemonsPerPage = JSON.parse( localStorage.getItem('amountPokemonsPerPage-pokedex')!) || 16
+    setAmountPokemonsPerPage(pokemonsPerPage)
+  }, [])
 
   return (
     <PokemonContext.Provider value={{
@@ -37,6 +49,7 @@ export const PokemonProvider: React.FC<PokemonProviderProps> = ({ children }) =>
       setAmountPokemonsPerPage,
       setPokemonPage,
       setPokemons,
+      setTheme,
     }}>
       { children }
     </PokemonContext.Provider>

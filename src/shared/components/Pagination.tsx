@@ -41,7 +41,7 @@ export const Pagination: React.FC<PaginationDto> = ({ setVisiblePokemons }) => {
 
   useEffect(() => {
     setPokemonPage(page);
-    localStorage.setItem('page', JSON.stringify(page));
+    localStorage.setItem('page-pokedex', JSON.stringify(page));
     getVisiblePokemons();
   }, [page]);
 

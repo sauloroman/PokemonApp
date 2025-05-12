@@ -12,7 +12,7 @@ export const PokedexPage: React.FC = () => {
     ui: { isModalOpen, typeSearch },
     openModal
   } = useContext<ContextState>( PokemonContext )
-  
+
   return (
     <div className="pokedex">
       {isModalOpen && <Modal />}
