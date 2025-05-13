@@ -68,11 +68,15 @@
 .choose__header {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .choose__header img {
   width: 3.2rem;
+}
+
+.choose__imgBox {
+  background-color: transparent;
 }
 
 .pokedex__header {
