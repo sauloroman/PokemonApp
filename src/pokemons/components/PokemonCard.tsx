@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePokemon } from '../hooks/usePokemon';
 import { useNavPage } from '../../shared/hooks';
-import { capitalizeString, getPokemonInfo } from '../../shared/helpers';
+import { getPokemonInfo } from '../../shared/helpers';
 import { PokemonTypesCard } from './PokemonTypesCard';
 
 interface PokemonCardProps {
