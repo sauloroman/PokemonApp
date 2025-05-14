@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# PokemonApp 😺 - Pokedex Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web construida con React que consume la API pública de PokeAPI. Permite explorar y buscar Pokémon con funcionalidades como filtrado, paginación, búsqueda por nombre y diseño completamente responsivo para dispositivos móviles y de escritorio.
 
-Currently, two official plugins are available:
+<img
+  alt="Pokedex app"
+  src="./src/assets/img/screenshots/cover.png" 
+/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+* 🔍 Búsqueda por nombre de Pokémon.
+* 🧪 Filtrado dinámico por tipos u otras características.
+* 📄 Paginación para explorar de forma eficiente toda la colección.
+* 📱 Diseño responsivo que se adapta a cualquier dispositivo.
+* ⚡️ Consumo eficiente de datos usando TanStack Query (react-query).
+* 🎯 Manejo global del estado con useContext.
+* 🧭 Navegación fluida con React Router Dom.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Tecnología         | Descripción                                         |
+|--------------------|-----------------------------------------------------|
+| React              | Librería principal para construir la UI             |
+| TypeScript         | Tipado estático en tiempo de desarrollo             |
+| TanStack Query     | Manejo de peticiones y caché de datos               |
+| React Router Dom   | Enrutamiento entre vistas                           |
+| SASS               | Estilos con preprocesador                           |
+| useContext         | Manejo del estado global sencillo                   |
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Instalación
+Clona este repositorio:
+```
+git clone https://github.com/tu-usuario/pokeapp.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Instala las dependencias:
 ```
+npm install
+```
+
+Inicia el servidor de desarrollo:
+```
+npm run dev
+```
+
+## 🌐 API utilizada
+
+<a href="https://pokeapi.co">PokeAPI v2:</a>
+Se utiliza para obtener datos de Pokémon, tipos, habilidades y más.
+
