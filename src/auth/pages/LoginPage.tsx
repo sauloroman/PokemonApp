@@ -6,7 +6,6 @@ import PokemonLettering from '../../assets/img/pokedex__title.png'
 import pokemonGifLogin from '../../assets/img/pokemonGifLogin.gif'
 import { PokemonContext } from "../../context";
 import { type ContextState } from "../../context/PokemonContext";
-// import pokemonGifLoginDark from '../../assets/img/pokemonGifLoginDark.gif'
 
 const formData = {
   username: '',
@@ -86,9 +85,6 @@ export const LoginPage: React.FC = () => {
         <div className="login__gif-1">
           <img src={pokemonGifLogin} alt="Pokemon peleando" />
         </div>
-        {/* <div className="login__gif-2">
-          <img src={pokemonGifLoginDark} alt="Pokemon peleando" />
-        </div> */}
       </div>
 
       <div className="bar--login">
