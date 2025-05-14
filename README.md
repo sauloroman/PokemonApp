@@ -1,50 +1,50 @@
 # PokemonApp 😺 - Pokedex Web
 
-Aplicación web construida con React que consume la API pública de PokeAPI. Permite explorar y buscar Pokémon con funcionalidades como filtrado, paginación, búsqueda por nombre y diseño completamente responsivo para dispositivos móviles y de escritorio.
+A web application built with React that consumes the public PokeAPI. It allows users to explore and search for Pokémon with features like filtering, pagination, name search, and a fully responsive design for both mobile and desktop devices.
 
 <img
   alt="Pokedex app"
   src="./src/assets/img/screenshots/cover.png" 
 />
 
-## Funcionalidades
-* 🔍 Búsqueda por nombre de Pokémon.
-* 🧪 Filtrado dinámico por tipos u otras características.
-* 📄 Paginación para explorar de forma eficiente toda la colección.
-* 📱 Diseño responsivo que se adapta a cualquier dispositivo.
-* ⚡️ Consumo eficiente de datos usando TanStack Query (react-query).
-* 🎯 Manejo global del estado con useContext.
-* 🧭 Navegación fluida con React Router Dom.
+## Features
+* 🔍 Search by Pokémon name.
+* 🧪 Dynamic filtering by types or other attributes.
+* 📄 Pagination for efficient exploration of the entire collection.
+* 📱 Responsive design that adapts to any device.
+* ⚡️ Efficient data fetching using TanStack Query (react-query).
+* 🎯 Global state management with useContext.
+* 🧭 Smooth navigation with React Router Dom.
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Technologies Used
 
-| Tecnología         | Descripción                                         |
-|--------------------|-----------------------------------------------------|
-| React              | Librería principal para construir la UI             |
-| TypeScript         | Tipado estático en tiempo de desarrollo             |
-| TanStack Query     | Manejo de peticiones y caché de datos               |
-| React Router Dom   | Enrutamiento entre vistas                           |
-| SASS               | Estilos con preprocesador                           |
-| useContext         | Manejo del estado global sencillo                   |
+| Technology         | Description                                          |
+|--------------------|------------------------------------------------------|
+| React              | Main library for building the UI                    |
+| TypeScript         | Static typing during development                    |
+| TanStack Query     | Data fetching and caching management                |
+| React Router Dom   | Routing between views                               |
+| SASS               | Styling with a preprocessor                         |
+| useContext         | Simple global state management                      |
 
-## 📦 Instalación
-Clona este repositorio:
+## 📦 Installation
+
+Clone this repository:
 ```
-git clone https://github.com/tu-usuario/pokeapp.git
+git clone https://github.com/your-username/pokeapp.git
 ```
 
-Instala las dependencias:
+Install dependencies:
 ```
 npm install
 ```
 
-Inicia el servidor de desarrollo:
+Start the development server:
 ```
 npm run dev
 ```
 
-## 🌐 API utilizada
+## 🌐 API Used
 
-<a href="https://pokeapi.co">PokeAPI v2:</a>
-Se utiliza para obtener datos de Pokémon, tipos, habilidades y más.
-
+<a href="https://pokeapi.co">PokeAPI v2:</a>  
+Used to retrieve data on Pokémon, types, abilities, and more.
